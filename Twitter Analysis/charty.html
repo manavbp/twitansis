@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		animationEnabled: true,
+		theme: "theme2",
+		//exportEnabled: true,
+		title:{
+			text: "Analysis Chart"
+		},
+		axisX:{
+       			title: "Sentiment Value"
+      		},
+		axisY:{
+       			title: "No of tweets"
+      		},
+		data: [
+		{
+			type: "column", //change type to bar, line, area, pie, etc
+			dataPoints: [
+				{ x: 1, y: <%=temp[1]%> },
+        			{ x: 2, y: <%=temp[2]%> },
+        			{ x: 3, y: <%=temp[3]%> },
+        			{ x: 4, y: <%=temp[4]%> },
+        			{ x: 5, y: <%=temp[5]%> },
+        			{ x: 6, y: <%=temp[6]%> },
+        			{ x: 7, y: <%=temp[7]%> },
+        			{ x: 8, y: <%=temp[8]%> },
+        			{ x: 9, y: <%=temp[9]%> },
+				{ x: 10, y: <%=temp[10]%> }
+			]
+		}
+		]
+	});
+
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+</br></br></br></br></br></br></br></br>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</br></br>
+Overall reaction of the people is <%=mood[0]%> with <%=reac%> % people having sentiment value of <%=mood[1]%> and <%=mood[2]%>.
+</html>
