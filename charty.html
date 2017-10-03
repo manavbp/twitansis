@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<script type="text/javascript">
+window.onload = function () {
+
+	if(<%=mood%> == 5)
+    		document.getElementById("demo").innerHTML = "Overall reaction of the people is bad with <%=reac%>% people having sentiment value of 5 and below.";
+	else if(<%=mood%> == 6)
+		document.getElementById("demo").innerHTML = "Overall reaction of the people is good with <%=reac%>% people having sentiment value of 6 and above.";
+	else if(<%=mood%> == 0)
+		document.getElementById("demo").innerHTML = "People's reaction is neutral.";
+	else 
+		document.getElementById("demo").innerHTML = "No tweets in the last 7 days for the given keyword.";
+
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		animationEnabled: true,
+		theme: "theme2",
+		//exportEnabled: true,
+		title:{
+			text: "Analysis Chart"
+		},
+		axisX:{
+       			title: "Sentiment Value"
+      		},
+		axisY:{
+       			title: "No of tweets"
+      		},
+		data: [
+		{
+			type: "column", //change type to bar, line, area, pie, etc
+			dataPoints: [
+				{ x: 1, y: <%=temp[1]%> },
+        			{ x: 2, y: <%=temp[2]%> },
+        			{ x: 3, y: <%=temp[3]%> },
+        			{ x: 4, y: <%=temp[4]%> },
+        			{ x: 5, y: <%=temp[5]%> },
+        			{ x: 6, y: <%=temp[6]%> },
+        			{ x: 7, y: <%=temp[7]%> },
+        			{ x: 8, y: <%=temp[8]%> },
+        			{ x: 9, y: <%=temp[9]%> },
+				{ x: 10, y: <%=temp[10]%> }
+			]
+		}
+		]
+	});
+
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+</br></br></br></br></br></br></br></br>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</br></br>
+<p id="demo" onload="myFunction()"></p>
+</html>
