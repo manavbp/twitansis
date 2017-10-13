@@ -32,16 +32,16 @@ window.onload = function () {
 		{
 			type: "column", //change type to bar, line, area, pie, etc
 			dataPoints: [
-				{ x: 1, y: <%=temp[1]%> },
-        			{ x: 2, y: <%=temp[2]%> },
-        			{ x: 3, y: <%=temp[3]%> },
-        			{ x: 4, y: <%=temp[4]%> },
-        			{ x: 5, y: <%=temp[5]%> },
-        			{ x: 6, y: <%=temp[6]%> },
-        			{ x: 7, y: <%=temp[7]%> },
-        			{ x: 8, y: <%=temp[8]%> },
-        			{ x: 9, y: <%=temp[9]%> },
-				{ x: 10, y: <%=temp[10]%> }
+				{ x: -5, y: <%=temp[2]%> },
+        			{ x: -4, y: <%=temp[2]%> },
+        			{ x: -3, y: <%=temp[3]%> },
+        			{ x: -2, y: <%=temp[4]%> },
+        			{ x: -1, y: <%=temp[5]%> },
+        			{ x: 1, y: <%=temp[6]%> },
+        			{ x: 2, y: <%=temp[7]%> },
+        			{ x: 3, y: <%=temp[8]%> },
+        			{ x: 4, y: <%=temp[9]%> },
+				{ x: 5, y: <%=temp[10]%> }
 			]
 		}
 		]
@@ -57,4 +57,6 @@ window.onload = function () {
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 </br></br>
 <p id="demo" onload="myFunction()"></p>
+<p>Positive Tweet example : <%=positive_example%> </p>
+<p>Negative Tweet example : <%=negative_example%> </p>
 </html>
